@@ -2,7 +2,7 @@
 
 # Projet 4 - Développeur Front-End
 
-[Page disponible sur GitHub Pages](https://yanntouil.github.io/YannTouil_4_27092021/starterOnly/index.html)
+[Page disponible sur GitHub Pages](https://jc-u.github.io/JeanChristopheUrbain_4_14102021/)
 
 ## Créez une landing page avec Javascript
 
