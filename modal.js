@@ -33,7 +33,7 @@ const form = document.getElementById("form");
 const firstName = document.getElementById("first");
 const lastName = document.getElementById("last");
 const eMail = document.getElementById("email");
-const birthDate = document.getElementById("birthDate");
+const birthDate = document.getElementById("birthdate");
 const quantity = document.getElementById("quantity");
 const location1 = document.getElementById("location1");
 const location2 = document.getElementById("location2");
@@ -127,10 +127,20 @@ function validate() {
 
   // Validation date de naissance
 
+  console.log(birthDate.value);
   let birthDateValid;
-  let regexDate = /^\d{2}[./-]\d{2}[./-]\d{4}$/;
+  let regexDate = /^\d{4}\-(0?[1-9]|1[012])\-(0?[1-9]|[12][0-9]|3[01])$/; //format YYYY-MM-DD
 
   if (!birthDate.value.match(regexDate)) {
+    errorBirth.innerText = "Veuillez remplir votre date de naissance";
+    errorBirth.style.color = "#fe142f";
+    errorBirth.style.fontSize = "0.8rem";
+    errorBirth.style.marginTop = "10px";
+    birthDate.style.border = "solid #fe142f 2px";
+  } else {
+    errorBirth.style.display = "none";
+    birthDate.style.border = "none";
+    birthDateValid = true;
   }
 
   //Validation du nombre de concours
@@ -197,7 +207,8 @@ function validate() {
     eMailValid == true &&
     quantityValid == true &&
     radioValid == true &&
-    cguValid == true
+    cguValid == true &&
+    birthDateValid == true
   ) {
     form.style.display = "none";
     success.style.display = "block";
