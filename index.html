@@ -115,6 +115,7 @@
                 class="formData">
                 <label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label><br>
                 <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99">
+                <div id="error-quantity"></div>
               </div>
               <p class="text-label">Quelles villes ?</p>
               <div
@@ -184,7 +185,8 @@
                 <label class="checkbox-label" for="location6">
                   <span class="checkbox-icon"></span>
                   Portland</label
-                >
+                >                
+                <div id="error-location"></div>
               </div>
 
               <div
@@ -195,15 +197,17 @@
                   id="checkbox1"
                   checked
                 />
+
                 <label class="checkbox2-label" for="checkbox1" required>
                   <span class="checkbox-icon"></span>
                   J'ai lu et accepté les conditions d'utilisation.
                 </label>
+                <div id="error-cgu"></div>
                 <br>
                 <input class="checkbox-input" type="checkbox" id="checkbox2" />
                 <label class="checkbox2-label" for="checkbox2">
                   <span class="checkbox-icon"></span>
-                  Je Je souhaite être prévenu des prochains évènements.
+                  Je souhaite être prévenu des prochains évènements.
                 </label>
                 <br>
               </div>
@@ -212,8 +216,12 @@
                 type="submit"
                 class="button"
                 value="C'est parti"
+                id="submit"
               />
+           
             </form>
+
+             <div id="success">Merci ! Votre réservation a été reçue.</div>
           </div>
         </div>
       </div>
