@@ -9,6 +9,7 @@ function editNav() {
 
 // DOM Elements
 const modalbg = document.querySelector(".bground");
+const section = document.querySelector(".hero-section");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
 
@@ -18,14 +19,20 @@ modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 // launch modal form
 function launchModal() {
   modalbg.style.display = "block";
+  section.style.opacity = "0";
+  section.style.position = "fixed";
 }
 
 // close modal
 const close = document.querySelector(".close");
+const closeSuccess = document.querySelector("#success input[type=submit]");
 close.addEventListener("click", closeModal);
+closeSuccess.addEventListener("click", closeModal);
 
 function closeModal() {
   modalbg.style.display = "none";
+  section.style.opacity = "1";
+  section.style.position = "initial";
 }
 
 // Implémenter entrées formulaire
@@ -58,11 +65,14 @@ const success = document.getElementById("success");
 // Empecher de soumettre le formulaire
 form.addEventListener("submit", (e) => {
   e.preventDefault();
+
+  // Envoie pour validation des données
+  validate(e);
 });
 
 // Fonction validation des champs du formulaire
 
-function validate() {
+function validate(e) {
   //Validation du Prénom
   let firstValid;
   let regexName = /^[a-z ,.'-]+$/i;
@@ -164,7 +174,7 @@ function validate() {
   //Validation d'un bouton radio séléctionné
 
   let radioValid;
-
+  console.log(e.target.elements.location);
   if (
     !location1.checked &&
     !location2.checked &&
@@ -211,6 +221,6 @@ function validate() {
     birthDateValid == true
   ) {
     form.style.display = "none";
-    success.style.display = "block";
+    success.style.display = "flex";
   }
 }
