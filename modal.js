@@ -12,6 +12,9 @@ const modalbg = document.querySelector(".bground");
 const section = document.querySelector(".hero-section");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
+const footer = document.querySelector("footer");
+const topNva = document.querySelector(".topnav");
+w = window.innerWidth;
 
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
@@ -21,6 +24,10 @@ function launchModal() {
   modalbg.style.display = "block";
   section.style.opacity = "0";
   section.style.position = "fixed";
+  if (w > "992") {
+    footer.style.display = "none";
+    topNva.style.display = "none";
+  }
 }
 
 // close modal
@@ -33,6 +40,8 @@ function closeModal() {
   modalbg.style.display = "none";
   section.style.opacity = "1";
   section.style.position = "initial";
+  footer.style.display = "initial";
+  topNva.style.display = "initial";
 }
 
 // Implémenter entrées formulaire
@@ -137,7 +146,6 @@ function validate(e) {
 
   // Validation date de naissance
 
-  console.log(birthDate.value);
   let birthDateValid;
   let regexDate = /^\d{4}\-(0?[1-9]|1[012])\-(0?[1-9]|[12][0-9]|3[01])$/; //format YYYY-MM-DD
 
@@ -174,23 +182,21 @@ function validate(e) {
   //Validation d'un bouton radio séléctionné
 
   let radioValid;
-  console.log(e.target.elements.location);
-  if (
-    !location1.checked &&
-    !location2.checked &&
-    !location3.checked &&
-    !location4.checked &&
-    !location5.checked &&
-    !location6.checked
-  ) {
-    errorLocation.innerText = "Vous devez choisir une ville";
-    errorLocation.style.color = "#fe142f";
-    errorLocation.style.fontSize = "0.8rem";
-    errorLocation.style.marginTop = "10px";
-    errorLocation.style.marginBottom = "20px";
-  } else {
-    errorLocation.style.display = "none";
-    radioValid = true;
+  let location = e.target.elements.location;
+
+  for (let i = 0; i < location.length; i++) {
+    const element = location[i];
+
+    if (!location[i].checked) {
+      errorLocation.innerText = "Vous devez choisir une ville";
+      errorLocation.style.color = "#fe142f";
+      errorLocation.style.fontSize = "0.8rem";
+      errorLocation.style.marginTop = "10px";
+      errorLocation.style.marginBottom = "20px";
+    } else {
+      errorLocation.style.display = "none";
+      radioValid = true;
+    }
   }
 
   //Validation des conditions générales d'utilisation

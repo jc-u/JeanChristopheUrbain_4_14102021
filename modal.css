@@ -38,6 +38,7 @@ img {
   height: 100px;
   align-items: center;
 }
+
 .header-logo {
   float: left;
 }
@@ -71,6 +72,22 @@ img {
 .topnav .icon {
   display: none;
 }
+
+.main-navbar a {
+  color: #232323;
+  font-family: "DM Sans", Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.main-navbar a::after {
+  display: block;
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: white;
+}
+
 main {
   font-size: 130%;
   font-weight: bolder;
@@ -85,6 +102,8 @@ main {
 @media screen and (max-width: 768px) {
   .topnav a {
     display: none;
+    margin: 0;
+    color: #ff001b;
   }
   .topnav a.icon {
     float: right;
@@ -203,7 +222,6 @@ main {
   position: relative;
   color: #fff;
   padding-top: 10px;
-  min-height: 850px;
 }
 
 @media screen and (max-width: 540px) {
@@ -455,13 +473,13 @@ input[data-error]::after {
   text-align: left;
 }
 
-@media screen and (max-width: 768px) {
-  .hero-content {
-    padding: 0;
+@media screen and (min-width: 768px) {
+  .content {
+    margin: 13% auto;
   }
 }
 
-@media screen and (max-width: 540px) {
+@media screen and (max-width: 768px) {
   .hero-content {
     padding: 0;
   }
@@ -523,10 +541,6 @@ footer {
   margin: 0 20px;
 }
 @media screen and (max-width: 800px) {
-  .modal-body {
-    min-height: 657px;
-  }
-
   .hero-section {
     display: block;
     box-shadow: unset;
@@ -573,11 +587,17 @@ footer {
   display: none;
   color: white;
   align-items: center;
-  min-height: 850px;
   text-align: center;
   font-size: 36px;
-  width: 309px;
+  width: 269px;
   margin: 0 auto;
+  height: 71vh;
+}
+
+@media (min-width: 768px) {
+  #success {
+    width: 409px;
+  }
 }
 
 #success input {
@@ -599,8 +619,22 @@ footer {
   }
 }
 
+@media screen and (min-width: 992px) {
+  .topnav {
+    height: 200px;
+  }
+
+  .content {
+    margin: 5% auto;
+  }
+}
+
 @media (min-width: 1920px) {
   body {
     max-width: 1740px;
+  }
+
+  .hero-text {
+    width: 136%;
   }
 }
