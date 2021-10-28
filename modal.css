@@ -141,11 +141,19 @@ main {
   .header-logo {
     width: 0;
   }
+<<<<<<< HEAD
 
   .main-navbar a:nth-child(1) {
     margin-top: 60px;
   }
 
+=======
+
+  .main-navbar a:nth-child(1) {
+    margin-top: 60px;
+  }
+
+>>>>>>> bbda1d3925c0adb6483150685a0b36e76dc11ef3
   main {
     width: 85%;
     margin: 0 auto;
@@ -583,8 +591,11 @@ footer {
   }
 }
 
+<<<<<<< HEAD
 /* Modal Validation */
 
+=======
+>>>>>>> bbda1d3925c0adb6483150685a0b36e76dc11ef3
 #success {
   display: none;
   color: white;
