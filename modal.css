@@ -32,18 +32,23 @@ img {
 
 .topnav {
   overflow: hidden;
-  margin: 3.5%;
+  padding: 3.5%;
+  display: flex;
+  justify-content: space-between;
+  height: 100px;
+  align-items: center;
 }
+
 .header-logo {
-    float: left;
+  float: left;
 }
 .main-navbar {
-    float: right;
+  float: right;
 }
 .topnav a {
   float: left;
   display: block;
-  color: #000000;
+  color: #ff001b;
   text-align: center;
   padding: 12px 12px;
   margin: 5px;
@@ -68,8 +73,38 @@ img {
   display: none;
 }
 
+.main-navbar a {
+  color: #232323;
+  font-family: "DM Sans", Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.main-navbar a::after {
+  display: block;
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: white;
+}
+
+main {
+  font-size: 130%;
+  font-weight: bolder;
+  color: black;
+  padding-top: 0.5vw;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  margin: 1px 20px 15px;
+  border-radius: 2rem;
+  text-align: justify;
+}
 @media screen and (max-width: 768px) {
-  .topnav a {display: none;}
+  .topnav a {
+    display: none;
+    margin: 0;
+    color: #ff001b;
+  }
   .topnav a.icon {
     float: right;
     display: block;
@@ -77,7 +112,11 @@ img {
 }
 
 @media screen and (max-width: 768px) {
-  .topnav.responsive {position: relative;}
+  .topnav.responsive {
+    position: relative;
+    height: unset;
+    align-items: unset;
+  }
   .topnav.responsive .icon {
     position: absolute;
     right: 0;
@@ -90,29 +129,32 @@ img {
   }
 }
 
-
-
- @media screen and (max-width: 540px) {
-  .topnav a {display: none;}
-  .topnav a.icon {
-    float: right;
-    display: block;
-    margin-top: -15px;
+@media screen and (max-width: 540px) {
+  .topnav a {
+    display: none;
   }
-} 
+  .topnav a.icon {
+    display: block;
+    color: #ff001b;
+  }
 
-main {
-  font-size: 130%;
-  font-weight: bolder;
-  color: black;
-  padding-top: 0.5vw;
-  padding-left: 2vw;
-  padding-right: 2vw;
-  margin: 1px 20px 15px;
-  border-radius: 2rem;
-  text-align: justify;
+  .header-logo {
+    width: 0;
+  }
 
+  .main-navbar a:nth-child(1) {
+    margin-top: 60px;
+  }
 
+  main {
+    width: 85%;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .hero-content {
+    padding: 0;
+  }
 }
 
 .modal-btn {
@@ -166,7 +208,6 @@ main {
   height: 100%;
   width: 100%;
   overflow: auto;
-  background-color: rgba(26, 39, 156, 0.4);
 }
 
 .content {
@@ -183,9 +224,18 @@ main {
   padding-top: 10px;
 }
 
+@media screen and (max-width: 540px) {
+  .content {
+    margin: 29% auto 0;
+    border-radius: 10px 10px 0 0;
+  }
+}
+
 .modal-body {
   padding: 15px 8%;
-  margin: 15px auto;
+  margin: 30px auto;
+
+  position: relative;
 }
 
 label {
@@ -208,6 +258,7 @@ input {
   font-size: 20px;
   height: 48px;
 }
+
 .formData[data-error]::after {
   content: attr(data-error);
   font-size: 0.4em;
@@ -420,7 +471,18 @@ input[data-error]::after {
   color: #fff;
   position: relative;
   text-align: left;
-  min-width: 424px;
+}
+
+@media screen and (min-width: 768px) {
+  .content {
+    margin: 13% auto;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hero-content {
+    padding: 0;
+  }
 }
 .hero-content::after {
   content: "";
@@ -440,6 +502,7 @@ input[data-error]::after {
   font-weight: normal;
   white-space: nowrap;
 }
+
 .hero-text {
   width: 146%;
   font-weight: normal;
@@ -459,7 +522,6 @@ input[data-error]::after {
 }
 .hero-img img {
   width: 100%;
-  height: 100%;
   display: block;
   padding: 0;
 }
@@ -486,7 +548,6 @@ footer {
   .hero-content {
     background: #fff;
     color: #000;
-    padding: 20px;
   }
   .hero-content::after {
     content: unset;
@@ -497,6 +558,11 @@ footer {
   .hero-headline {
     font-size: 4.5rem;
     white-space: normal;
+  }
+  @media screen and (max-width: 540px) {
+    .hero-headline {
+      font-size: 3.5rem;
+    }
   }
   .hero-text {
     width: unset;
@@ -517,6 +583,34 @@ footer {
   }
 }
 
+/* Modal Validation */
+
+#success {
+  display: none;
+  color: white;
+  align-items: center;
+  text-align: center;
+  font-size: 36px;
+  width: 269px;
+  margin: 0 auto;
+  height: 71vh;
+}
+
+@media (min-width: 768px) {
+  #success {
+    width: 409px;
+  }
+}
+
+#success input {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 201px;
+  margin: 0 auto;
+}
+
 @keyframes modalopen {
   from {
     opacity: 0;
@@ -527,3 +621,22 @@ footer {
   }
 }
 
+@media screen and (min-width: 992px) {
+  .topnav {
+    height: 200px;
+  }
+
+  .content {
+    margin: 5% auto;
+  }
+}
+
+@media (min-width: 1920px) {
+  body {
+    max-width: 1740px;
+  }
+
+  .hero-text {
+    width: 136%;
+  }
+}
