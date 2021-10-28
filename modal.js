@@ -17,11 +17,8 @@ const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
 const footer = document.querySelector("footer");
 const topNva = document.querySelector(".topnav");
-<<<<<<< HEAD
 
 // Détection de la taille de la fenêtre
-=======
->>>>>>> bbda1d3925c0adb6483150685a0b36e76dc11ef3
 w = window.innerWidth;
 
 // launch modal event
@@ -76,11 +73,7 @@ const errorLocation = document.getElementById("error-location");
 const errorCgu = document.getElementById("error-cgu");
 const errorBirth = document.getElementById("error-birth");
 
-<<<<<<< HEAD
 // Modal Succes
-=======
-//Succes
->>>>>>> bbda1d3925c0adb6483150685a0b36e76dc11ef3
 const success = document.getElementById("success");
 
 // Empecher de soumettre le formulaire
