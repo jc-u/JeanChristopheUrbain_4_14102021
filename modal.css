@@ -141,11 +141,11 @@ main {
   .header-logo {
     width: 0;
   }
-  <<<<<<< HEAD .main-navbar a:nth-child(1) {
+  .main-navbar a:nth-child(1) {
     margin-top: 60px;
   }
 
-  ======= .main-navbar a:nth-child(1) {
+  .main-navbar a:nth-child(1) {
     margin-top: 60px;
   }
 
