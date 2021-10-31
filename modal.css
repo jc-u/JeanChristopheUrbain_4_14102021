@@ -530,6 +530,7 @@ input[data-error]::after {
   grid-column: span 8;
 }
 .hero-img img {
+  position: relative;
   width: 100%;
   display: block;
   padding: 0;
